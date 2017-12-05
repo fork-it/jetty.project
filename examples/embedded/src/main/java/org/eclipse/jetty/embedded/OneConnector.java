@@ -33,9 +33,8 @@ public class OneConnector
 
         // HTTP connector
         ServerConnector http = new ServerConnector(server);
-        http.setHost("localhost");
         http.setPort(8080);
-        http.setIdleTimeout(30000);
+        http.setIdleTimeout(2000);
 
         // Set the connector
         server.addConnector(http);
