@@ -87,11 +87,9 @@ public class HttpChannelOverHTTP2 extends HttpChannel
     }
 
     @Override
-    public void send()
+    public void send(HttpExchange exchange)
     {
-        HttpExchange exchange = getHttpExchange();
-        if (exchange != null)
-            sender.send(exchange);
+        sender.send(exchange);
     }
 
     @Override

@@ -147,7 +147,8 @@ public class ClientCloseTest
         @Override
         public void onWebSocketError(Throwable cause)
         {
-            LOG.warn("onWebSocketError",cause);
+            LOG.warn("onWebSocketError "+cause);
+            LOG.debug("onWebSocketError {}",cause);
             assertThat("Unique Error Event", error.compareAndSet(null, cause), is(true));
             errorLatch.countDown();
         }
